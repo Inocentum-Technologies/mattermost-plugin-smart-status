@@ -3,7 +3,7 @@ import React, { useState } from "react";
 
 interface PropsType {
     id: string;
-    value: string;
+    value?: string;
     onChange: (id: string, value: string) => void;
     setSaveNeeded: () => void;
 }
@@ -14,7 +14,7 @@ export default ({
     onChange,
     setSaveNeeded
 }: PropsType) => {
-    const [selectedEmoji, setSelectedEmoji] = useState<string>(value);
+    const [selectedEmoji, setSelectedEmoji] = useState<string>(value ?? "📆::calendar");
     const [showEmojiPicker, setShowEmojiPicker] = useState(false);
 
     const handleEmojiClick = (emojiData: EmojiClickData) => {

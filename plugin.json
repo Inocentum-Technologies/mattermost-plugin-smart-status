@@ -25,7 +25,7 @@
                 "type": "custom",
                 "help_text": "",
                 "placeholder": "",
-                "default": "📅::calendar"
+                "default": ""
             },
             {
                 "key": "CustomInCallStatusText",
