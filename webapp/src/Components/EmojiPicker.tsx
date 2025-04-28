@@ -18,10 +18,10 @@ export default ({
     const [showEmojiPicker, setShowEmojiPicker] = useState(false);
 
     const handleEmojiClick = (emojiData: EmojiClickData) => {
-        setSelectedEmoji(emojiData.emoji);
-        console.log(emojiData);
+        const newValue = `${emojiData.emoji}::${emojiData.names[0].replace(/[-\s]/g, "_")}`;
+        setSelectedEmoji(newValue);
 
-        onChange(id, emojiData.names[0].replace(/[-\s]/g, "_"));
+        onChange(id, newValue);
         setSaveNeeded()
 
         setShowEmojiPicker(false);
@@ -32,14 +32,14 @@ export default ({
             <input
                 placeholder="Select emoji"
                 className="form-control"
-                value={selectedEmoji}
+                value={selectedEmoji.split('::')[0]}
                 onClick={() => setShowEmojiPicker(!showEmojiPicker)} />
             <EmojiPicker
                 open={showEmojiPicker}
                 skinTonesDisabled
                 previewConfig={{
-                    defaultEmoji: '',
-                    defaultCaption: '',
+                    defaultEmoji: '📅',
+                    defaultCaption: 'calendar',
                     showPreview: true
                 }}
                 onEmojiClick={handleEmojiClick} />

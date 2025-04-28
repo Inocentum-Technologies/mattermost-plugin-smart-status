@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"strings"
 
 	"github.com/mattermost/mattermost/server/public/model"
 )
@@ -11,7 +12,7 @@ func (p *Plugin) WebSocketMessageHasBeenPosted(webConnID, userID string, req *mo
 	if req.Action == "custom_com.mattermost.calls_join" {
 		config := p.getConfiguration().Clone()
 		err := p.API.UpdateUserCustomStatus(userID, &model.CustomStatus{
-			Emoji: config.CustomInCallStatusEmoji,
+			Emoji: strings.Split(config.CustomInCallStatusEmoji, "::")[1],
 			Text:  config.CustomInCallStatusText,
 		})
 

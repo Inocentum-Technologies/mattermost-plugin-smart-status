@@ -4,7 +4,7 @@
     "description": "Configure custom status messages that are automatically applied when users perform specific actions—starting with call participation, with more triggers coming soon. Admins can define the default status text and emoji for each supported action.",
     "homepage_url": "https://github.com/Inocentum-Technologies/mattermost-plugin-smart-status",
     "support_url": "https://github.com/Inocentum-Technologies/mattermost-plugin-smart-status/issues",
-    "icon_path": "assets/logo.svg",
+    "icon_path": "assets/icon.svg",
     "version": "0.0.1",
     "min_server_version": "9.6.0",
     "server": {
@@ -21,15 +21,15 @@
         "settings": [
             {
                 "key": "CustomInCallStatusEmoji",
-                "display_name": "Custom In-Call Status EMoji:",
+                "display_name": "In-Call Status Emoji:",
                 "type": "custom",
                 "help_text": "",
                 "placeholder": "",
-                "default": ""
+                "default": "📅::calendar"
             },
             {
                 "key": "CustomInCallStatusText",
-                "display_name": "Custom In-Call Status Text:",
+                "display_name": "In-Call Status Text:",
                 "type": "text",
                 "help_text": "",
                 "placeholder": "In a meeting",
