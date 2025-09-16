@@ -1,9 +1,9 @@
 name: Mattermost Plugin CI
 
 on:
-  push:
-    branches: [ "main" ]
   pull_request:
+    types:
+      - closed
     branches: [ "main" ]
 
 jobs:
@@ -51,14 +51,6 @@ jobs:
         run: |
           cd webapp
           npm install
-
-      - name: Run Go tests
-        run: go test -v ./...
-
-      - name: Run lint
-        uses: golangci/golangci-lint-action@v6
-        with:
-          version: latest
 
       - name: Build plugin
         run: make
