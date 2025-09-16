@@ -89,5 +89,5 @@ This will create a `.tar.gz` file in the `dist/` directory, which can be uploade
 
 ## License
 
-This project is licensed under the [MIT License](./LICENSE).
+This project is licensed under the [GPL-3.0 License](./LICENSE).
 
